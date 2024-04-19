@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_package = "com.proto.calculator";
+
+message OperationParam {
+    int32 a = 1;
+    int32 b = 2;
+}
+
+message OperationResult {
+    int32 result = 1;
+}
+
+service CalculatorService {
+    rpc add(OperationParam) returns (OperationResult);
+    rpc substract(OperationParam) returns (OperationResult);
+    rpc multiply(OperationParam) returns (OperationResult);
+    rpc divide(OperationParam) returns (OperationResult);
+}
